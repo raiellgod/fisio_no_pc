@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Ajuda na fisio de ortognatica! video e cronometro</title>
+</head>
+<body>
+    <div id="fundo_video">
+        <video id="video" autoplay></video>
+    </div>
+    
+    <div id="cronometro">
+        <div class="container">
+            <h1>Cronometro</h1>
+            <div class="timer">
+                <div class="time" id="minutes">00</div>
+                <div class="separador">:</div>
+                <div class="time" id="seconds">00</div>
+                <div class="separador">:</div>
+                <div class="time" id="milliseconds">000</div>
+            </div>
+
+            <div class="buttons">
+                <button class="btn" id="startBtn">Iniciar</button>
+                <button class="btn" id="pauseBtn">Pausar</button>
+                <button class="btn" id="resumeBtn">Continuar</button>
+                <button class="btn" id="resteBtn">Resetar</button>
+            </div>
+
+        </div>
+        
+    </div>
+
+
+    <script src="./index.js"></script>
+</body>
+</html>
