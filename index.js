@@ -35,17 +35,55 @@ function startTimer(){
 
         minutesEL.textContent = formatTime(minutes)
         seconddsEL.textContent = formatTime(seconds)
-        millisecondsEL.textContent = milliseconds
+        millisecondsEL.textContent = formatMilliseconds(milliseconds)
 
     }, 10);
 
-    
+    startBtn.style.display = "none";
+    pauseBtn.style.display = "block";
 }
 
 function formatTime(time){
     return time < 10 ? `0${time}` : time;
 }
 
+function formatMilliseconds(time){
+    return time < 100 ? `${time}`.padStart(3, "0") : time;
+}
+
+pauseBtn.addEventListener("click", pauseTimer)
+
+function pauseTimer(){
+    isPaused = true;
+    pauseBtn.style.display = "none";
+    resumeBtn.style.display ="block";
+}
+
+resumeBtn.addEventListener("click", resumeTimer)
+
+function resumeTimer(){
+    isPaused = false;
+    resumeBtn.style.display ="none";
+    pauseBtn.style.display = "block";
+}
+
+resetBtn.addEventListener("click", resetTimer)
+
+function resetTimer(){
+    pauseBtn.style.display = "none";
+    resumeBtn.style.display = "none";
+    startBtn.style.display = "block";
+
+    minutes = 0;
+    seconds = 0;
+    milliseconds = 0;
+
+    clearInterval(interval);
+
+    minutesEL.textContent = "00";
+    seconddsEL.textContent = "00";
+    millisecondsEL.textContent = "000";
+}
 
 
 
