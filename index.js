@@ -17,6 +17,10 @@ let isPaused = false;
 startBtn.addEventListener("click", startTimer)
 
 function startTimer(){
+
+    isPaused = false
+
+
     interval = setInterval(()=>{
 
         if(!isPaused) {
